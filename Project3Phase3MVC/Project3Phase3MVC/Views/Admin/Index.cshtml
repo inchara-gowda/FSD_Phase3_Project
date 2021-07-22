@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DotNet_Phase3_Project.Models.Product>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/css/ProductCard.css" rel="stylesheet" />
+
+<div class="jumbotron">
+     <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Digital Retailers Inc<span class="text-muted">. Laptops Online Store</span></h2>
+        <p class="lead">We Specialize in the Sale of Laptops. Choose from a Range of Brands and Order Today! Find Must-Have and Innovative laptops. Order Today!.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+       <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><image href="https://tech-404.com/wp-content/uploads/2019/07/reputation-for-the-current-Computer.jpg" x="0" y="0" height="500px" width="500px" /> </svg>
+        
+      </div>
+    </div>
+</div>
+
+<div class="row">
+  
+        <div class="container d-flex justify-content-center mt-50 mb-50">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-img-actions"> <img src=@item.Image class="card-img img-fluid" width="96" height="350" alt=""> </div>
+                            </div>
+                            <div class="card-body bg-light text-center">
+                                <div class="mb-2">
+                                    <h6 class="font-weight-semibold mb-2"> <a href="#" class="text-default mb-2" data-abc="true">@item.Name</a> </h6> <a href="#" class="text-muted" data-abc="true">@item.Category</a>
+                                </div>
+                                <h3 class="mb-0 font-weight-semibold">$@item.Price</h3>
+                                <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> <a href="/home/details/@item.ProductID">More Details</a></button>
+                                @*<button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>*@
+                            </div>
+                        </div>
+                    </div>
+                }
+                </div>
+        </div>
+    
+
+</div>
